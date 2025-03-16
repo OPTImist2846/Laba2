@@ -1,122 +1,39 @@
 #include <iostream>
-#include <string>
-#include <vector>
+#include "FishingRod.h"
+#include "BottomRod.h"
+#include "SpinningRod.h"
+#include "FloatRod.h"
 
 using namespace std;
 
-// Базовий клас для всіх вудок
-class FishingRod {
-protected:
-    string type; // тип вудки
-    double price; // ціна
-    string material; // матеріал вудки
 
-public:
-    FishingRod() {
-        this->type = "FishingRod";
-        this->price = 200;
-        this->material = "wood";
-    }
-
-    FishingRod(string t, double p, string m) : FishingRod("FishingRod") {
-        this->type = t;
-        this -> price = p;
-        this -> material = m;
-    }
-
-    FishingRod(string t) {
-        this->type = t;
-        this -> price = 100;
-        this -> material = "plastic";
-    }
-    FishingRod(string t,double p) {
-        this->type = t;
-        this -> price = p;
-        this -> material = "plastic";
-    }
-    ~FishingRod() {
-        cout << "Rodtype '" << this->type << "' was deleted." << endl;
-    }
-
-    // Виведення інформації
-   virtual void displayInfo() const {
-        cout << "Type: " << this->type << ", Material: " << this->material << ", Price: " << this->price << " grn." << endl;
-    }
-
-    // Метод для встановлення ціни
-    void setPrice(double p) {
-        this->price = p;
-    }
-
-    // Метод для встановлення матеріалу
-    void setMaterial(string m) {
-        this->material = m;
-    }
-
-    // Метод для отримання ціни
-    double getPrice() const {
-        return this->price;
-    }
-};
-
-class SpinningRod : public FishingRod {
-public:
-    // Конструктор
-    SpinningRod(double p, string m) : FishingRod("Spining", p, m) {
-        this->price = p;
-        this->material = m;
-    }
-
-    // Виведення інформації про спінінг
-    void displayInfo() const override {
-        cout << "Spinning: ";
-        FishingRod::displayInfo();
-    }
-    ~SpinningRod() {
-        cout << "SpinningRod '" << this->type << "' was deleted." << endl;
-    }
-};
-
-// Клас "Донна вудка" (успадковує FishingRod)
-class BottomRod : public FishingRod {
-public:
-    // Конструктор
-    BottomRod(double p, string m) : FishingRod("Bottom", p, m) {
-        this->price = p;
-        this->material = m;
-    }
-
-    // Виведення інформації про донну вудку
-    void displayInfo() const override {
-        cout << "Bottom: ";
-        FishingRod::displayInfo();
-    }
-    ~BottomRod() {
-        cout << "SpinningRod '" << this->type << "' was deleted." << endl;
-    }
-};
-
-// Клас "Поплавочна вудка" (успадковує FishingRod)
-class FloatRod : public FishingRod {
-public:
-    // Конструктор
-    FloatRod(double p, string m) : FishingRod("FloatRod", p, m) {
-        this->price = p;
-        this->material = m;
-    }
-
-    // Виведення інформації про поплавкову вудку
-    void displayInfo() const override {
-        cout << "FloatRod: ";
-        FishingRod::displayInfo();
-    }
-};
-
-
-// Тестування програми
 int main() {
-    FishingRod rod;
-    rod.displayInfo();
+    cout << "FISTING ROD!!!" << endl;
+    FishingRod rod1;
+    FishingRod rod2("Ahuenna");
+    FishingRod rod3("Zalupna",1000000);
+    FishingRod rod4("Pesdataja",23,"Gowno");
 
+    rod1.displayInfo();
+    rod2.displayInfo();
+    rod3.displayInfo();
+    rod4.displayInfo();
+
+    cout << "BOTTOM ROD EBAW!!!" << endl;
+    BottomRod brod1;
+    BottomRod brod2(98, "wool");
+
+    brod1.displayInfo();
+    brod2.displayInfo();
+
+    cout << "FLOAT ROD EBAW JA W ROT!!!" << endl;
+    FloatRod frod1;
+    FloatRod frod2("Float","Sponge");
+
+    frod1.displayInfo();
+    frod2.displayInfo();
+
+    cout << "SPINNING ROD <HOOK IN ASS>!!!" << endl;
+    SpinningRod srod1(18500,"MDMA");
     return 0;
 }
