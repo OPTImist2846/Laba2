@@ -14,8 +14,8 @@ protected:
 public:
     FishingRod() {
         this->type = "FishingRod";
-        this->price = 200;
-        this->material = "wood";
+        this->price = 9200;
+        this->material = "Wood";
     }
 
     FishingRod(string t, double p, string m) : FishingRod("FishingRod") {
@@ -26,7 +26,7 @@ public:
 
     FishingRod(string t) {
         this->type = t;
-        this -> price = 100;
+        this -> price = 20000;
         this -> material = "plastic";
     }
     FishingRod(string t,double p) {

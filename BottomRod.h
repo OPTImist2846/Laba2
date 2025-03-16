@@ -9,9 +9,9 @@ using namespace std;
 class BottomRod : public FishingRod {
 public:
     BottomRod() {
-        this->type = "BottomRod";
-        this->price = 696969;
-        this->material = "Platina";
+        this->type = "UL-CHUBER™ La Cazadora";
+        this->price = 40000;
+        this->material = "Viper";
     }
 
     BottomRod(double p, string m) : FishingRod("Bottom", p, m) {

@@ -11,7 +11,7 @@ class SpinningRod : public FishingRod {
 public:
     SpinningRod(){
         this->price = 4389;
-        this->material = "Viper";
+        this->material = "LSP";
         this->type = "Spinning";
     }
 

@@ -10,30 +10,30 @@ using namespace std;
 int main() {
     cout << "FISTING ROD!!!" << endl;
     FishingRod rod1;
-    FishingRod rod2("Ahuenna");
-    FishingRod rod3("Zalupna",1000000);
-    FishingRod rod4("Pesdataja",23,"Gowno");
+    FishingRod rod2("Norm");
+    FishingRod rod3("Top",32700);
+    FishingRod rod4("Tak sobi",12500,"Wood");
 
     rod1.displayInfo();
     rod2.displayInfo();
     rod3.displayInfo();
     rod4.displayInfo();
 
-    cout << "BOTTOM ROD EBAW!!!" << endl;
+    cout << "BOTTOM ROD NALETAI NAROD!!!" << endl;
     BottomRod brod1;
-    BottomRod brod2(98, "wool");
+    BottomRod brod2(20400, "Titan");
 
     brod1.displayInfo();
     brod2.displayInfo();
 
-    cout << "FLOAT ROD EBAW JA W ROT!!!" << endl;
+    cout << "FLOAT ROD, ROZBERAI NAROD!!!" << endl;
     FloatRod frod1;
-    FloatRod frod2("Float","Sponge");
+    FloatRod frod2("Garry Scott Brutus","Cork");
 
     frod1.displayInfo();
     frod2.displayInfo();
 
-    cout << "SPINNING ROD <HOOK IN ASS>!!!" << endl;
-    SpinningRod srod1(18500,"MDMA");
+    cout << "SPINNING ROD KUPI PLIS!!" << endl;
+    SpinningRod srod1(18500,"Platina");
     return 0;
 }

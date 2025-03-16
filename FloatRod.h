@@ -12,7 +12,7 @@ public:
         this->type = "FloatRod";
     }
 
-    FloatRod(string t, string m) : FishingRod(t, 100, m) {
+    FloatRod(string t, string m) : FishingRod(t, 10000, m) {
         this->type = t;
         this->material = m;
     }
