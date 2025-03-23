@@ -13,12 +13,14 @@ int main() {
     FishingRod rod2("Norm");
     FishingRod rod3("Top",32700);
     FishingRod rod4("Tak sobi",12500,"Wood");
+    FishingRod rod5;
 
     rod1.displayInfo();
     rod2.displayInfo();
     rod3.displayInfo();
     rod4.displayInfo();
-
+    cin>>rod5;
+    cout<<rod5<< endl;
     cout << "BOTTOM ROD NALETAI NAROD!!!" << endl;
     BottomRod brod1;
     BottomRod brod2(20400, "Titan");
@@ -35,5 +37,6 @@ int main() {
 
     cout << "SPINNING ROD KUPI PLIS!!" << endl;
     SpinningRod srod1(18500,"Platina");
+
     return 0;
 }

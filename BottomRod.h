@@ -20,13 +20,14 @@ public:
     }
 
     // Виведення інформації про донну вудку
-    void displayInfo() const override {
-        cout << "Bottom: ";
-        FishingRod::displayInfo();
-    }
+    // void displayInfo() const override {
+    //     cout << "Bottom: ";
+    //     FishingRod::displayInfo();
+    // }
     ~BottomRod() {
         cout << "SpinningRod '" << this->type << "' was deleted." << endl;
     }
+
 };
 
 

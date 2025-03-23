@@ -57,6 +57,21 @@ public:
     double getPrice() const {
         return this->price;
     }
+    friend ostream& operator<<(ostream& out, const FishingRod& rod) {
+        out <<"Type:" << rod.type << ", Material: " << rod.material << ", Price:"<< rod.price<< endl;
+        return out;
+
+    }
+    friend istream& operator>>(istream& in, FishingRod& rod) {
+        cout<<"Enter Type:"<<endl;
+        in>>rod.type;
+        cout<<"Enter Material:"<<endl;
+        in>>rod.material;
+        cout<<"Enter Price:"<<endl;
+        in>>rod.price;
+
+        return in;
+    }
 };
 
 
