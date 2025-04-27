@@ -22,13 +22,15 @@ public:
     }
 
     // Конструктор копіювання
-    Bouquet(const Bouquet& other) : name(other.name), flowers(other.flowers) {
-        cout << "Copy Bouquet: " << this->name << "." << endl;
+    Bouquet(const Bouquet& other) : name(other.name) {
+        std::cout << "copy constr: " << other.name << std::endl;
+        for (const auto& flower : other.flowers) {
+            flowers.push_back(flower);
+        };
     }
-
     // Деструктор
     ~Bouquet() {
-        cout << "Bouquet destoyed" << this->name << "." << endl;
+        cout << "Bouquet destoyed " << this->name << "." << endl;
     }
 
     // Метод для додавання квітки до букета

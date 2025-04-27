@@ -20,5 +20,11 @@ int main() {
     Bouquet springBouquet = anna.createBouquet("Spring mix", {tulip, chamomile});
     springBouquet.displayBouquet();
 
+    Bouquet originalBouquet("Lite");
+    originalBouquet.addFlower(rose);
+
+    Bouquet copiedBouquet = originalBouquet; // Виклик конструктора копіювання
+    copiedBouquet.displayBouquet();
+
     return 0;
 }
