@@ -44,6 +44,11 @@ public:
         cout << "destroyed Product: " << this->name << endl;
     }
 
+    const string& getName() const { return name; }
+    double getPrice() const { return price; }
 
+    virtual void displayInfo() const {
+        cout << "Product: " << name << ", Price: " << price << " grn." << endl;
+    }
 };
 #endif //PRODUCT_H
