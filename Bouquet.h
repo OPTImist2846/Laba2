@@ -28,6 +28,20 @@ public:
             flowers.push_back(flower);
         };
     }
+
+    Bouquet(Bouquet&& other) noexcept : name(std::move(other.name)), flowers(std::move(other.flowers)) {
+        std::cout << "Bouquet move " << name << std::endl;
+        other.name = "";
+    }
+
+    Bouquet createBouquet(const std::string& name, const std::vector<Flower>& flowerList) {
+        Bouquet tempBouquet(name);
+        for (const auto& flower : flowerList) {
+            tempBouquet.addFlower(flower);
+        }
+        return tempBouquet; //викликано конструктор переміщення
+    }
+
     // Деструктор
     ~Bouquet() {
         cout << "Bouquet destoyed " << this->name << "." << endl;
