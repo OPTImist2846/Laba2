@@ -25,7 +25,13 @@ public:
         cout << "Flower create: " << this->name << "." << endl;
     }
 
-    // Конструктор копіювання (за замовчуванням згенерований компілятором працює добре для простих типів)
+    Flower(const std::string& name, const std::string& color, double price)
+        : name(name), color(color), price(price) {}
+
+    friend std::ostream& operator<<(std::ostream& os, const Flower& flower) {
+        os << "Name: " << flower.name << ", Colour: " << flower.color << ", Price: " << flower.price;
+        return os;
+    }
 
     // Деструктор
     ~Flower() {

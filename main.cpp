@@ -2,7 +2,7 @@
 #include "Bouquet.h"
 #include "Flower.h"
 #include "Florist.h"
-
+#include "Price.h"
 using namespace std;
 
 int main() {
@@ -28,6 +28,8 @@ int main() {
 
     Bouquet movedBouquet = anna.createBouquet("Yellow flowers", {tulip}); // Виклик конструктора переміщення
     movedBouquet.displayBouquet();
+
+    std::cout << rose << std::endl;
 
     return 0;
 }
