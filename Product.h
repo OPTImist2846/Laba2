@@ -22,6 +22,28 @@ public:
     Product(Product&& other) noexcept : name(move(other.name)), price(other.price) {
         cout << "Move Product: " << this->name << endl;
     }
+    Product& operator=(const Product& other) {
+        cout << "Naming Product: " << other.name << endl;
+        if (this != &other) {
+            name = other.name;
+            price = other.price;
+        }
+        return *this;
+    }
+
+    Product& operator=(Product&& other) noexcept {
+        cout << "Move naming Product: " << other.name << endl;
+        if (this != &other) {
+            name = move(other.name);
+            price = other.price;
+        }
+        return *this;
+    }
+
+    virtual ~Product() {
+        cout << "destroyed Product: " << this->name << endl;
+    }
+
 
 };
 #endif //PRODUCT_H
