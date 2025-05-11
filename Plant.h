@@ -7,14 +7,13 @@
 
 using namespace std;
 
-// Базовий клас для всіх рослин
 class Plant {
 protected:
-    string name;      // Назва рослини
-    string color;     // Колір рослини
+    string name;      // Назва
+    string color;     // Колір
 
 public:
-    // Конструктор за замовчуванням
+
     Plant() : name("Unknown"), color("Unknown") {
         cout << "Plant default constructor" << endl;
     }
@@ -32,7 +31,7 @@ public:
     // Оператор присвоєння копіюванням
     Plant& operator=(const Plant& other) {
         cout << "Plant assignment operator" << endl;
-        if (this != &other) { // Захист від самоприсвоєння
+        if (this != &other) {
             name = other.name;
             color = other.color;
         }
@@ -44,11 +43,11 @@ public:
         cout << "Plant destructor: " << name << endl;
     }
 
-    // Гетери для отримання назви та кольору
+    // oтримання назви та кольору
     string getName() const { return name; }
     string getColor() const { return color; }
 
-    // Віртуальний метод для виведення інформації про рослину
+    // виведення інформації про рослину
     virtual void displayInfo() const {
         cout << "Name: " << name << ", Color: " << color;
     }

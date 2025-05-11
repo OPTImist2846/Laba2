@@ -1,54 +1,64 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Plant.h"
+
 #ifndef FLOWER_H
 #define FLOWER_H
 
 using namespace std;
 
-class Flower {
-
+class Flower : public Plant {
 private:
-    string name;
-    string color;
-    double price;
-    int shelfLifeDays;
+    double price;         // Ціна квітки
+    int shelfLifeDays; // Термін придатності в днях
 
 public:
     // Конструктор за замовчуванням
-    Flower() : name("Unknown"), color("Unknown"), price(0.0), shelfLifeDays(0) {
-        cout << "Flower def." << endl;
+    Flower() : Plant(), price(0.0), shelfLifeDays(0) {
+        cout << "Flower default constructor" << endl;
     }
 
-    // Перевантажений конструктор
+    // Конструктор з усіма параметрами
     Flower(const string& name, const string& color, double price, int shelfLifeDays)
-        : name(name), color(color), price(price), shelfLifeDays(shelfLifeDays) {
-        cout << "Flower create: " << this->name << "." << endl;
+        : Plant(name, color), price(price), shelfLifeDays(shelfLifeDays) {
+        cout << "Flower constructor: " << name << endl;
     }
 
-    Flower(const std::string& name, const std::string& color, double price)
-        : name(name), color(color), price(price) {}
+    // Конструктор з назвою, кольором та ціною
+    Flower(const string& name, const string& color, double price)
+        : Plant(name, color), price(price), shelfLifeDays(0) {}
 
-    friend std::ostream& operator<<(std::ostream& os, const Flower& flower) {
-        os << "Name: " << flower.name << ", Colour: " << flower.color << ", Price: " << flower.price;
-        return os;
+    // Конструктор копіювання
+    Flower(const Flower& other) : Plant(other), price(other.price), shelfLifeDays(other.shelfLifeDays) {
+        cout << "Flower copy constructor" << endl;
+    }
+
+    // Оператор присвоєння копіюванням
+    Flower& operator=(const Flower& other) {
+        cout << "Flower assignment operator" << endl;
+        if (this != &other) {
+            Plant::operator=(other); // Виклик оператора присвоєння базового класу
+            price = other.price;
+            shelfLifeDays = other.shelfLifeDays;
+        }
+        return *this;
     }
 
     // Деструктор
-    ~Flower() {
-        cout << "was destroyed " << this->name << "." << endl;
+    ~Flower() override {
+        cout << "Flower destructor: " << name << endl;
     }
 
-    // Методи доступу (геттери)
-    string getName() const { return name; }
-    string getColor() const { return color; }
+    // Гетери для отримання ціни та терміну придатності
     double getPrice() const { return price; }
     int getShelfLifeDays() const { return shelfLifeDays; }
 
-    // Метод для виведення інформації про квітку
-    void displayInfo() const {
-        cout << "Name: " << name << ", Color: " << color
-                  << ", Price: " << price << " grn, Expiration date: " << shelfLifeDays << " days" << endl;
+    // Перевизначений метод для виведення інформації про квітку
+    void displayInfo() const override {
+        Plant::displayInfo(); // Виклик методу базового класу
+        cout << ", Price: " << price << " grn, Expiration date: " << shelfLifeDays << " days" << endl;
     }
 };
 
-#endif
+#endif // FLOWER_H
