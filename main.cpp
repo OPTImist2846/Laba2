@@ -23,11 +23,6 @@ int main() {
     Bouquet originalBouquet("Lite");
     originalBouquet.addFlower(rose);
 
-    Bouquet copiedBouquet = originalBouquet; // Виклик конструктора копіювання
-    copiedBouquet.displayBouquet();
-
-    Bouquet movedBouquet = anna.createBouquet("Yellow flowers", {tulip}); // Виклик конструктора переміщення
-    movedBouquet.displayBouquet();
 
     std::cout << rose << std::endl;
 
