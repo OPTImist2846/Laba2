@@ -14,18 +14,17 @@ private:
     int shelfLifeDays; // Термін придатності в днях
 
 public:
-    // Конструктор за замовчуванням
     Flower() : Plant(), price(0.0), shelfLifeDays(0) {
         cout << "Flower default constructor" << endl;
     }
 
-    // Конструктор з усіма параметрами
+
     Flower(const string& name, const string& color, double price, int shelfLifeDays)
         : Plant(name, color), price(price), shelfLifeDays(shelfLifeDays) {
         cout << "Flower constructor: " << name << endl;
     }
 
-    // Конструктор з назвою, кольором та ціною
+
     Flower(const string& name, const string& color, double price)
         : Plant(name, color), price(price), shelfLifeDays(0) {}
 
