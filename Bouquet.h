@@ -10,39 +10,49 @@ using namespace std;
 class Bouquet {
 private:
     string name;
-    vector<Flower> flowers;
+    vector<Flower> flowers; // Вектор, що зберігає квіти в букеті
 
 public:
-    // Конструктор за замовчуванням
-    Bouquet() : name("No name") {}
+    Bouquet() : name("No name") {
+        cout << "Bouquet default constructor called" << endl;
+    }
 
-    // Перевантажений конструктор
+    // Конструктор з назвою букета
     Bouquet(const string& name) : name(name) {
-        cout << "Bouquet create" << this->name << "." << endl;
+        cout << "Bouquet constructor with name: " << name << endl;
     }
 
-
-    Bouquet(Bouquet&& other) noexcept : name(std::move(other.name)), flowers(std::move(other.flowers)) {
-        std::cout << "Bouquet move " << name << std::endl;
-        other.name = "";
+    // Конструктор копіювання
+    Bouquet(const Bouquet& other) : name(other.name), flowers(other.flowers) {
+        cout << "Bouquet copy constructor called for " << name << endl;
     }
 
+    // Оператор присвоєння копіюванням
+    Bouquet& operator=(const Bouquet& other) {
+        cout << "Bouquet assignment operator called for " << name << endl;
+        if (this != &other) {
+            name = other.name;
+            flowers = other.flowers; // Deep copy
+        }
+        return *this;
+    }
 
     // Деструктор
-    ~Bouquet() {
-        cout << "Bouquet destoyed " << this->name << "." << endl;
+    virtual ~Bouquet() {
+        cout << "Bouquet destructor called for " << name << endl;
     }
 
     // Метод для додавання квітки до букета
     void addFlower(const Flower& flower) {
         flowers.push_back(flower);
+        cout << "Flower added to bouquet: " << name << endl;
     }
 
     // Метод для виведення інформації про букет
     void displayBouquet() const {
         cout << "Bouquet: " << name << endl;
         if (flowers.empty()) {
-            cout << "Bouquet empty." << endl;
+            cout << "Bouquet is empty." << endl;
         } else {
             cout << "Bouquet composition:" << endl;
             for (const auto& flower : flowers) {
@@ -52,4 +62,4 @@ public:
     }
 };
 
-#endif
+#endif // BOUQUET_H
