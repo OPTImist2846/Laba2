@@ -34,10 +34,6 @@ int main() {
     cout << "\nBouquet Information:\n";
     bouquet.displayBouquet();
 
-    // Копіювання букета
-    Bouquet copiedBouquet = bouquet;
-    cout << "\nCopied Bouquet Information:\n";
-    copiedBouquet.displayBouquet();std::cout << rose << std::endl;
 
     Bouquet romanticBouquet("Romantic");
     romanticBouquet.addFlower(rose);
