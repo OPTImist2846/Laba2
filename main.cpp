@@ -10,21 +10,43 @@ int main() {
     Flower tulip("Tulip", "Yellow", 20.00, 5);
     Flower chamomile("Chamomile", "White", 15.25, 6);
 
+
+    // Виведення інформації про квіти
+    cout << "\nFlower Information:\n";
+    rose.displayInfo();
+    tulip.displayInfo();
+    chamomile.displayInfo();
+
+    // Створення вектора квітів
+    vector<Flower> flowerList;
+    flowerList.push_back(rose);
+    flowerList.push_back(tulip);
+    flowerList.push_back(chamomile);
+
+    // Створення об'єкта Florist
+    Florist florist("Alice");
+    florist.displayName();
+
+    // Створення букета флористом
+    Bouquet bouquet = florist.createBouquet("Spring Bouquet", flowerList);
+
+    // Виведення інформації про букет
+    cout << "\nBouquet Information:\n";
+    bouquet.displayBouquet();
+
+    // Копіювання букета
+    Bouquet copiedBouquet = bouquet;
+    cout << "\nCopied Bouquet Information:\n";
+    copiedBouquet.displayBouquet();std::cout << rose << std::endl;
+
     Bouquet romanticBouquet("Romantic");
     romanticBouquet.addFlower(rose);
     romanticBouquet.addFlower(tulip);
     romanticBouquet.displayBouquet();
 
-    Florist anna("Anna");
-    anna.displayName();
-    Bouquet springBouquet = anna.createBouquet("Spring mix", {tulip, chamomile});
-    springBouquet.displayBouquet();
 
     Bouquet originalBouquet("Lite");
     originalBouquet.addFlower(rose);
-
-
-    std::cout << rose << std::endl;
 
     return 0;
 }
