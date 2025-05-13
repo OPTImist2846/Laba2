@@ -1,9 +1,11 @@
 
-#ifndef ROSE_H
-#define ROSE_H
+
 #include <string>
 #include "Flower.h"
+#include "Measurable.h"
 #include <iostream>
+#ifndef ROSE_H
+#define ROSE_H
 
 using namespace std;
 
