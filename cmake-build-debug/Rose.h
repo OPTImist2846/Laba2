@@ -45,6 +45,27 @@ public:
         cout << "Rose destructor: " << name << endl;
     }
 
+    // Гетер для отримання інформації про наявність шипів
+    bool getHasThorns() const { return hasThorns; }
+
+    // Перевизначені методи базового класу Plant
+    void displayInfo() const override {
+        Flower::displayInfo(); // Виклик методу базового класу
+        cout << ", Has thorns: " << (hasThorns ? "Yes" : "No") << ", Stem length: " << stemLength << " cm" << endl;
+    }
+
+    void photosynthesis() const override {
+        cout << "Rose is performing photosynthesis with its petals and stem" << endl;
+    }
+
+    // Реалізація методів інтерфейсу Measurable
+    double getMeasurement() const override {
+        return stemLength;
+    }
+
+    string getUnits() const override {
+        return "cm";
+    }
 };
 
 
