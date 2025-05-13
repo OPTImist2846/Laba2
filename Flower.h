@@ -58,6 +58,10 @@ public:
         Plant::displayInfo(); // Виклик методу базового класу
         cout << ", Price: " << price << " grn, Expiration date: " << shelfLifeDays << " days" << endl;
     }
+
+    void photosynthesis() const override {
+        cout << "Flower is performing photosynthesis with its petals" << endl;
+    }
 };
 
 #endif // FLOWER_H
