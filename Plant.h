@@ -38,7 +38,7 @@ public:
         return *this;
     }
 
-    // Деструктор
+    // віртуальний деструктор
     virtual ~Plant() {
         cout << "Plant destructor: " << name << endl;
     }
@@ -47,9 +47,13 @@ public:
     string getName() const { return name; }
     string getColor() const { return color; }
 
+
     // виведення інформації про рослину
     virtual void displayInfo() const {
         cout << "Name: " << name << ", Color: " << color;
+    }
+    virtual void photosynthesis() const {
+        cout << "Plant is performing photosynthesis" << endl;
     }
 };
 
