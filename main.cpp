@@ -76,6 +76,5 @@ int main() {
     Bouquet originalBouquet("Lite");
     originalBouquet.addFlower(rose);
 
-    cout << "\nProgram завершено.\n";
     return 0;
 }
