@@ -1,7 +1,6 @@
 #include "Florist.h" // Включаємо власний заголовок
 
 Florist::Florist() : name("Unnamed florist") {}
-
 Florist::Florist(const std::string& name) : name(name) {}
 Florist::Florist(const Florist& other) : name(other.name) {}
 Florist& Florist::operator=(const Florist& other) {
