@@ -14,54 +14,18 @@ private:
     int shelfLifeDays; // Термін придатності в днях
 
 public:
-    Flower() : Plant(), price(0.0), shelfLifeDays(0) {
-        cout << "Flower default constructor" << endl;
-    }
+    Flower();
+    Flower(const std::string& name, const std::string& color, double price, int shelfLifeDays);
+    Flower(const std::string& name, const std::string& color, double price);
+    Flower(const Flower& other);
+    Flower& operator=(const Flower& other);
+    ~Flower() override;
 
+    double getPrice() const;
+    int getShelfLifeDays() const;
 
-    Flower(const string& name, const string& color, double price, int shelfLifeDays)
-        : Plant(name, color), price(price), shelfLifeDays(shelfLifeDays) {
-        cout << "Flower constructor: " << name << endl;
-    }
-
-
-    Flower(const string& name, const string& color, double price)
-        : Plant(name, color), price(price), shelfLifeDays(0) {}
-
-    // Конструктор копіювання
-    Flower(const Flower& other) : Plant(other), price(other.price), shelfLifeDays(other.shelfLifeDays) {
-        cout << "Flower copy constructor" << endl;
-    }
-
-    // Оператор присвоєння копіюванням
-    Flower& operator=(const Flower& other) {
-        cout << "Flower assignment operator" << endl;
-        if (this != &other) {
-            Plant::operator=(other); // Виклик оператора присвоєння базового класу
-            price = other.price;
-            shelfLifeDays = other.shelfLifeDays;
-        }
-        return *this;
-    }
-
-    // Деструктор
-    ~Flower() override {
-        cout << "Flower destructor: " << name << endl;
-    }
-
-    // Гетери для отримання ціни та терміну придатності
-    double getPrice() const { return price; }
-    int getShelfLifeDays() const { return shelfLifeDays; }
-
-    // Перевизначений метод для виведення інформації про квітку
-    void displayInfo() const override {
-        Plant::displayInfo(); // Виклик методу базового класу
-        cout << ", Price: " << price << " grn, Expiration date: " << shelfLifeDays << " days" << endl;
-    }
-
-    void photosynthesis() const override {
-        cout << "Flower is performing photosynthesis with its petals" << endl;
-    }
+    void displayInfo() const override;
+    void photosynthesis() const override;
 };
 
 #endif // FLOWER_H
