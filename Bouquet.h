@@ -60,6 +60,15 @@ public:
             }
         }
     }
+
+    string getName() const { return name; } // Гетер для назви букета
+    double getTotalPrice() const { // Метод для розрахунку загальної вартості букета
+        double totalPrice = 0.0;
+        for(const auto& flower : flowers) {
+            totalPrice += flower.getPrice();
+        }
+        return totalPrice;
+    }
 };
 
 #endif // BOUQUET_H

@@ -46,11 +46,6 @@ int main() {
     cout << "\nVirtual Function Call:\n";
     plantPtr->photosynthesis(); // Викликається Flower::photosynthesis() або Rose::photosynthesis()
 
-    // Демонстрація використання інтерфейсу
-    cout << "\nInterface Demonstration:\n";
-    Measurable* measurablePtr = &rose1;
-    cout << "Rose stem length: " << measurablePtr->getMeasurement() << measurablePtr->getUnits() << endl;
-
     // Демонстрація виклику віртуального деструктора
     cout << "\nVirtual Destructor Call:\n";
     delete plantPtr; // Викликається спочатку деструктор Rose, потім Flower, потім Plant
