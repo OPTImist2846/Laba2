@@ -26,6 +26,10 @@ public:
 
     void displayInfo() const override;
     void photosynthesis() const override;
+
+    Flower* clone() const override {
+        return new Flower(*this); // Повертає вказівник на нову копію Flower
+    }
 };
 
 #endif // FLOWER_H
