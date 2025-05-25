@@ -7,15 +7,22 @@
 #include <iomanip>
 
 
-#include "classes/Plant.h"
-#include "classes/Flower.h"
-#include "classes/Measurable.h"
-#include "classes/Rose.h"
-#include "classes/Bouquet.h"
-#include "classes/Florist.h"
+#include "Plant.h"
+#include "Flower.h"
+#include "Measurable.h"
+#include "Rose.h"
+#include "Bouquet.h"
+#include "Florist.h"
 
+const std::string ADMIN_PASSWORD = "admin";
 
-using namespace std;
+)
+void clearScreen() {
+    for (int i = 0; i < 50; ++i) {
+        std::cout << std::endl;
+    }
+}
+
 
 int main() {
 
